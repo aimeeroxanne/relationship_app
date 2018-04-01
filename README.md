@@ -42,18 +42,26 @@ font-family: 'Quattrocento', serif;
 
 ### Server Routes Plan
 [Server GitHub repo](https://github.com/teddim/relationship_app_api)
-- POST /api/signup Create a new user
-- POST /api/login User login
-- GET /api/users/:id Retrieve user information
-- DELETE /api/users/:id Delete a user account
+- Auth
+  - POST /api/signup Create a new user
+  - POST /api/login User login
 
-- POST /api/couples Create a link between two users
-- DELETE /api/couples Delete the link between two users
+- Users
+  - GET /api/users/:id Retrieve user information
+  - DELETE /api/users/:id Delete a user account
 
-- GET /api/users/:id/feelings/:type Retrieve a user's feelings (loved/unloved)
-- POST /api/users/:id/feelings/:type Post a user's feelings (loved/unloved)
-- PATCH /api/users/:id/feelings/:type Update a user's feelings (loved/unloved)
+- Couples
+  - POST /api/couples Create a link between two users
+  - DELETE /api/couples Delete the link between two users
 
-- GET /api/users/:id/received_scores/:type Retrieve a user's scores from their partner (loved/unloved)
-- GET /api/users/:id/sent_scores/:type Retrieve a user's scores sent to a partner (loved/unloved)
-- POST /api/users/:id/sent_scores/:type Create a user's scores sent to a partner for the current time period (loved/unloved)
+- Feelings
+  - GET /api/users/:id/feelings/:type Retrieve a user's feelings (loved/unloved)
+  - POST /api/users/:id/feelings/:type Post a user's feelings (loved/unloved)
+  - PATCH /api/users/:id/feelings/:type Update a user's feelings (loved/unloved)
+
+- Received Scores
+  - GET /api/users/:id/received_scores/:type Retrieve a user's scores from their partner (loved/unloved)
+
+- Sent Scores
+  - GET /api/users/:id/sent_scores/:type Retrieve a user's scores sent to a partner (loved/unloved)
+  - POST /api/users/:id/sent_scores/:type Create a user's scores sent to a partner for the current time period (loved/unloved)
