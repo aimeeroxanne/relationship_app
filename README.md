@@ -1,5 +1,7 @@
 # Relationship App
 
+[Deployed link](http://relationship-app.surge.sh/)
+
 ### Schema/ERD for Database
 [ERD](https://drive.google.com/file/d/1QXSHpquH37266fL5_dRPYeiIJ2ecnwaq/view?usp=sharing)
 
