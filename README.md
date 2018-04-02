@@ -1,3 +1,4 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/teddim/relationship_app.png?columns=all)](https://waffle.io/teddim/relationship_app?utm_source=badge)
 # Relationship App
 
 [Deployed link](http://relationship-app.surge.sh/)
