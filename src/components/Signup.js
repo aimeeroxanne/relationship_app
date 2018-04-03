@@ -11,8 +11,8 @@ const style = {
 };
 
 const SignUpPage = () =>
-  <div>
-    <h1>Sign Up</h1>
+  <div className="inner">
+    <h1>Create an Account</h1>
     <SignUpForm />
   </div>
 
@@ -29,7 +29,11 @@ class SignUpForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <TextField
-          floatingLabelText="Username"
+          floatingLabelText="Name"
+          hintText="Enter Name"
+        /><br />
+        <TextField
+          floatingLabelText="Email"
           hintText="Enter Username"
         /><br />
         <TextField
@@ -37,7 +41,12 @@ class SignUpForm extends Component {
           floatingLabelText="Password"
           type="password"
         /><br />
-        <RaisedButton label="Sign Up" primary={true} style={style} />
+        <TextField
+          hintText="Verify Password"
+          floatingLabelText="Password"
+          type="password"
+        /><br />
+        <RaisedButton label="Create Account" primary={true} style={style} />
       </form>
     );
   }
