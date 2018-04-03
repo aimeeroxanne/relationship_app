@@ -7,6 +7,8 @@ import {grey100, grey300, grey400, grey500,
 white, darkBlack, fullBlack} from 'material-ui/styles/colors'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import SignUpPage from './components/Signup';
 
 import {fade} from 'material-ui/utils/colorManipulator'
 
@@ -33,8 +35,15 @@ const muiTheme = getMuiTheme({
 class App extends Component {
   render() {
     return (
+
       <MuiThemeProvider muiTheme={muiTheme}>
-        <SplashPage />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={SplashPage} />
+            <Route exact path="/signup" component={SignUpPage} />
+
+          </Switch>
+        </Router>
       </MuiThemeProvider>
     )
   }
