@@ -6,6 +6,7 @@ body {
 
 .splash {
   background-color: #941B0C;
+  color: white;
 }
 
 .splash h1 {
@@ -41,5 +42,4 @@ h1, h2, h3, h4, h5, h6 {
   justify-self: center;
   align-self: center;
   text-align: center;
-  color: white;
 }
