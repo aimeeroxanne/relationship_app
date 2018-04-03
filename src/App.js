@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import SignUpPage from './components/Signup'
+import SplashPage from './components/SplashPage'
 
 import {grey100, grey300, grey400, grey500,
 white, darkBlack, fullBlack} from 'material-ui/styles/colors'
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <SignUpPage />
+        <SplashPage />
       </MuiThemeProvider>
     )
   }
