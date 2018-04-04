@@ -10,7 +10,7 @@
 [Wireframes](https://xd.adobe.com/view/7d7d3742-d589-4880-bf49-c2c8658f40d9/)
 
 ### A style guide
-[Color Scheme](coolors.co/220901-621708-941b0c-bc3908-f6aa1c)
+[Color Scheme](http://coolors.co/220901-621708-941b0c-bc3908-f6aa1c)
 
 ```
 /* RGB */
