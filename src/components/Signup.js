@@ -46,9 +46,21 @@ class SignUpForm extends Component {
     e.preventDefault();
     auth.signUp(email, password)
       .then(authUser => {
-console.log(authUser.providerData);
         this.setState(() => ({ ...INITIAL_STATE }));
-        // save data to my server
+        const url = 'http://localhost:3001/api/auth'
+
+        //TODO remove hardcoded data
+        const data = {"displayName": "Teddi", "email": "tsm@example.com"}
+
+        fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: new Headers({
+          'Content-Type': 'application/json'
+          })
+        }).then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response));
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
