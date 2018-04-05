@@ -9,7 +9,7 @@ import { auth } from '../firebase'
 
 const style = {
   margin: 12,
-};
+}
 
 const SignUpPage = () =>
   <div className="inner">

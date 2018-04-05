@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import SignUpPage from './components/Signup';
+import SignInPage from './components/Signin';
 
 import {fade} from 'material-ui/utils/colorManipulator'
 
@@ -41,6 +42,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={SplashPage} />
             <Route exact path="/signup" component={SignUpPage} />
+            <Route exact path="/signin" component={SignInPage} />
 
           </Switch>
         </Router>

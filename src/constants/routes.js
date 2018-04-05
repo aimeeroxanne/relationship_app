@@ -1,5 +1,8 @@
-const SIGN_UP = "testing"
+
+const SIGN_UP = "signup"
+const HOME = "app"
 
 export {
-  SIGN_UP
+  SIGN_UP,
+  HOME
 }
