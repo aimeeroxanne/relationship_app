@@ -49,8 +49,7 @@ class SignUpForm extends Component {
         this.setState(() => ({ ...INITIAL_STATE }));
         const url = 'http://localhost:3001/api/auth'
 
-        //TODO remove hardcoded data
-        const data = {"displayName": "Teddi", "email": "tsm@example.com"}
+        const data = {"displayName": displayName, "email": email}
 
         fetch(url, {
           method: 'POST',
