@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
-import { SignUpLink } from './Signup';
-import { auth } from '../firebase';
-import * as routes from '../constants/routes';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import { SignUpLink } from './Signup'
+import { auth } from '../firebase'
+import * as routes from '../constants/routes'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const style = {
   margin: 12,
-};
+}
 
 const SignInPage = ({ history }) =>
   <div className="inner">
@@ -20,41 +20,41 @@ const SignInPage = ({ history }) =>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
-});
+})
 
 const INITIAL_STATE = {
   email: '',
   password: '',
   error: null,
-};
+}
 
 class SignInForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { ...INITIAL_STATE };
+    this.state = { ...INITIAL_STATE }
   }
 
   onSubmit = (event) => {
     const {
       email,
       password,
-    } = this.state;
+    } = this.state
 
     const {
       history,
-    } = this.props;
+    } = this.props
 
-    auth.SignIn(email, password)
+    auth.signIn(email, password)
       .then(() => {
-        this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.HOME);
+        this.setState(() => ({ ...INITIAL_STATE }))
+        history.push(routes.HOME)
       })
       .catch(error => {
-        this.setState(byPropKey('error', error));
-      });
+        this.setState(byPropKey('error', error))
+      })
 
-    event.preventDefault();
+    event.preventDefault()
   }
 
   render() {
@@ -62,11 +62,11 @@ class SignInForm extends Component {
       email,
       password,
       error,
-    } = this.state;
+    } = this.state
 
     const isInvalid =
       password === '' ||
-      email === '';
+      email === ''
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -87,12 +87,12 @@ class SignInForm extends Component {
 
         { error && <p>{error.message}</p> }
       </form>
-    );
+    )
   }
 }
 
-export default withRouter(SignInPage);
+export default withRouter(SignInPage)
 
 export {
   SignInForm,
-};
+}

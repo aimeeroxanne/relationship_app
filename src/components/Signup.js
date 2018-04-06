@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 import { Link } from 'react-router-dom'
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
 
 import * as routes from '../constants/routes'
+import { url } from '../constants/env'
 import { auth } from '../firebase'
 
 const style = {
@@ -19,7 +20,7 @@ const SignUpPage = () =>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
-});
+})
 
 const INITIAL_STATE = {
   displayName: '',
@@ -31,7 +32,7 @@ const INITIAL_STATE = {
 
 class SignUpForm extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
   this.state = INITIAL_STATE
   }
@@ -41,13 +42,12 @@ class SignUpForm extends Component {
       displayName,
       email,
       password,
-    } = this.state;
+    } = this.state
 
-    e.preventDefault();
+    e.preventDefault()
     auth.signUp(email, password)
       .then(authUser => {
-        this.setState(() => ({ ...INITIAL_STATE }));
-        const url = 'http://localhost:3001/api/auth'
+        this.setState(() => ({ ...INITIAL_STATE }))
 
         const data = {"displayName": displayName, "email": email}
 
@@ -59,11 +59,11 @@ class SignUpForm extends Component {
           })
         }).then(res => res.json())
           .catch(error => console.error('Error:', error))
-          .then(response => console.log('Success:', response));
+          .then(response => console.log('Success:', response))
       })
       .catch(error => {
-        this.setState(byPropKey('error', error));
-      });
+        this.setState(byPropKey('error', error))
+      })
 
   }
 
@@ -74,13 +74,13 @@ class SignUpForm extends Component {
       password,
       verifypass,
       error,
-    } = this.state;
+    } = this.state
 
     const isInvalid =
       password !== verifypass ||
       password === '' ||
       displayName === '' ||
-      email === '';
+      email === ''
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -126,9 +126,9 @@ const SignUpLink = () =>
     <Link to={routes.SIGN_UP}>Sign Up</Link>
   </p>
 
-export default SignUpPage;
+export default SignUpPage
 
 export {
   SignUpForm,
   SignUpLink,
-};
+}
