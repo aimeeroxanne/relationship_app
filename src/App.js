@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import SplashPage from './components/SplashPage'
+import * as routes from './constants/routes'
+import { firebase } from './firebase'
 
 import {grey100, grey300, grey400, grey500,
 white, darkBlack, fullBlack} from 'material-ui/styles/colors'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import SignUpPage from './components/Signup';
-import SignInPage from './components/Signin';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+
+import SignUpPage from './components/Signup'
+import SignInPage from './components/Signin'
+import Navigation from './components/./Navigation'
+import SplashPage from './components/./SplashPage'
+// import PasswordForgetPage from './components/PasswordForget'
+// import HomePage from './Home'
+// import AccountPage from './components/Account'
 
 import {fade} from 'material-ui/utils/colorManipulator'
 
@@ -34,17 +41,58 @@ const muiTheme = getMuiTheme({
 })
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      authUser: null,
+    }
+  }
+
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState(() => ({ authUser }))
+        : this.setState(() => ({ authUser: null }))
+    })
+  }
+
   render() {
     return (
 
       <MuiThemeProvider muiTheme={muiTheme}>
         <Router>
-          <Switch>
-            <Route exact path="/" component={SplashPage} />
-            <Route exact path="/signup" component={SignUpPage} />
-            <Route exact path="/signin" component={SignInPage} />
+          <div>
+            <Navigation authUser={this.state.authUser} />
 
-          </Switch>
+            <hr/>
+
+            <Route
+              exact path={routes.SPLASH}
+              component={() => <SplashPage />}
+            />
+            <Route
+              exact path={routes.SIGN_UP}
+              component={() => <SignUpPage />}
+            />
+            <Route
+              exact path={routes.SIGN_IN}
+              component={() => <SignInPage />}
+            />
+            {/* <Route
+              exact path={routes.PASSWORD_FORGET}
+              component={() => <PasswordForgetPage />}
+            /> */}
+            {/* <Route
+              exact path={routes.HOME}
+              component={() => <HomePage />}
+              />
+              <Route
+              exact path={routes.ACCOUNT}
+              component={() => <AccountPage />}
+            /> */}
+          </div>
         </Router>
       </MuiThemeProvider>
     )
