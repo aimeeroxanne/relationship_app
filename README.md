@@ -45,11 +45,10 @@ font-family: 'Quattrocento', serif;
 
 ### Server Routes Plan
 [Server GitHub repo](https://github.com/teddim/relationship_app_api)
-- Auth
-  - POST /api/signup Create a new user
-  - POST /api/login User login
 
 - Users
+  - POST /api/signup Create a new user
+  - POST /api/login User login
   - GET /api/users/:id Retrieve user information
   - DELETE /api/users/:id Delete a user account
 
