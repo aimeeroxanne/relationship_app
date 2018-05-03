@@ -14,7 +14,7 @@ const style = {
 class SendRating extends Component {
   render() {
     return (
-      <div className="width">
+      <div className="width center">
 
 
         <Card className='center'>
@@ -22,21 +22,18 @@ class SendRating extends Component {
           <CardTitle title="Appreciation" /> {/*
           <CardText> */}
           <span className="large">8</span> {/* </CardText> */}
-          <br />
-          <br />
           <TextField multiLine={true} hintText="Enter comments here to express to your partner how you feel about this item. Is there a way your partner could have improved their score?" />
           <br />
 
         </Card>
-
         <p>
           This person feels loved and respected when their partner expresses appreciation for what they’ve done.
         </p>
+
       </div>
 
-        )
-        }
-        }
+    )}
+  }
 
 
         export default SendRating
