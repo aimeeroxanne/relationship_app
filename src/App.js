@@ -20,6 +20,7 @@ import AccountProfile from './components/./AccountProfile'
 import SendRating from './components/./SendRating'
 import LovedUnlovedListSelf from './components/./LovedUnlovedListSelf'
 import LovedUnlovedListPartner from './components/./LovedUnlovedListPartner'
+import DeleteAccountButton from './components/./DeleteAccountButton'
 // import PasswordForgetPage from './components/PasswordForget'
 // import HomePage from './Home'
 // import AccountPage from './components/Account'
@@ -134,6 +135,10 @@ class App extends Component {
             <Route
               exact path={routes.UNLOVED_PARTNER}
               component={() => <LovedUnlovedListPartner loved = {false} list = {unloved} />}
+            />
+            <Route
+              exact path={routes.DELETE_ACCOUNT_BUTTON}
+              component={() => <DeleteAccountButton />}
             />
             {/* <Route
               exact path={routes.PASSWORD_FORGET}

@@ -13,6 +13,7 @@ const LOVED_SELF = '/loved_self'
 const LOVED_PARTNER = '/loved_partner'
 const UNLOVED_SELF = '/unloved_self'
 const UNLOVED_PARTNER = '/unloved_partner'
+const DELETE_ACCOUNT_BUTTON = '/delete_account_button'
 
 export {
   SIGN_UP,
@@ -28,4 +29,5 @@ export {
   LOVED_PARTNER,
   UNLOVED_SELF,
   UNLOVED_PARTNER,
+  DELETE_ACCOUNT_BUTTON,
 }
