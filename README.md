@@ -54,7 +54,7 @@ font-family: 'Quattrocento', serif;
 
 - Couples
   - POST /api/couples Create a link between two users
-  - DELETE /api/couples Delete the link between two users
+  - DELETE /api/couples/:id Delete the link between two users
 
 - Feelings
   - GET /api/users/:id/feelings/:type Retrieve a user's feelings (loved/unloved)
@@ -66,4 +66,4 @@ font-family: 'Quattrocento', serif;
 
 - Sent Scores
   - GET /api/users/:id/sent_scores/:type Retrieve a user's scores sent to a partner (loved/unloved)
-  - POST /api/users/:id/sent_scores/:type Create a user's scores sent to a partner for the current time period (loved/unloved)
+  - POST /api/users/:id/sent_scores/ Create a user's scores sent to a partner for the current time period (loved/unloved)
