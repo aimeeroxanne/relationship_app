@@ -14,6 +14,7 @@ import SignUpPage from './components/Signup'
 import SignInPage from './components/Signin'
 import Navigation from './components/./Navigation'
 import SplashPage from './components/./SplashPage'
+import DeleteUser from './components/./DeleteUser'
 // import PasswordForgetPage from './components/PasswordForget'
 // import HomePage from './Home'
 // import AccountPage from './components/Account'
@@ -79,6 +80,10 @@ class App extends Component {
             <Route
               exact path={routes.SIGN_IN}
               component={() => <SignInPage />}
+            />
+            <Route
+              exact path={routes.DELETE_USER}
+              component={() => <DeleteUser />}
             />
             {/* <Route
               exact path={routes.PASSWORD_FORGET}

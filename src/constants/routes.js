@@ -5,6 +5,7 @@ const SIGN_IN = '/signin'
 const SPLASH = '/'
 const HOME = '/'
 const ACCOUNT = '/account'
+const DELETE_USER = '/delete_user'
 const PASSWORD_FORGET = '/pw-forget'
 
 export {
@@ -13,5 +14,6 @@ export {
   SPLASH,
   HOME,
   ACCOUNT,
-  PASSWORD_FORGET
+  PASSWORD_FORGET,
+  DELETE_USER
 }
