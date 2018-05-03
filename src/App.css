@@ -26,3 +26,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.large {
+  font-size: 50vh;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.width {
+  width: 50%;
+  min-width: 300px;
+}

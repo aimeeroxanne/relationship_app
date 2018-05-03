@@ -1,23 +1,42 @@
 import React, { Component } from 'react'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faSync from '@fortawesome/fontawesome-free-solid/faSync'
 import { Link, Switch } from "react-router-dom";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import TextField from 'material-ui/TextField';
 
-import RaisedButton from 'material-ui/RaisedButton';
-
+const style = {
+  height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
 class SendRating extends Component {
   render() {
     return (
-      <div className="splash bg">
-        <div className="inner">
-          <FontAwesomeIcon icon={faSync} className='fa-10x' />
-          <h1> Relationship App </h1>
-          <p> An app designed to help you reconnect with your partner. </p>
-          <Link to="/signup" ><RaisedButton label="Create Account" default={true} /></Link>
-        </div>
-      </div>
-    )
-  }
-}
+      <div className="width">
 
-export default SendRating
+
+        <Card className='center'>
+
+          <CardTitle title="Appreciation" /> {/*
+          <CardText> */}
+          <span className="large">8</span> {/* </CardText> */}
+          <br />
+          <br />
+          <TextField multiLine={true} hintText="Enter comments here to express to your partner how you feel about this item. Is there a way your partner could have improved their score?" />
+          <br />
+
+        </Card>
+
+        <p>
+          This person feels loved and respected when their partner expresses appreciation for what they’ve done.
+        </p>
+      </div>
+
+        )
+        }
+        }
+
+
+        export default SendRating
