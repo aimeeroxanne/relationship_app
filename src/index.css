@@ -1,11 +1,21 @@
 
 body {
   font-family: 'Quattrocento', serif;
-  background: #941B0C;
+  background: #fff;
+}
+
+.splash {
+  background-color: #941B0C;
+  color: white;
+}
+
+.splash h1 {
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
+  color: black;
 }
 
 .container {
@@ -32,5 +42,4 @@ h1, h2, h3, h4, h5, h6 {
   justify-self: center;
   align-self: center;
   text-align: center;
-  color: white;
 }
