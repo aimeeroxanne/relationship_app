@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
+import user from './user.svg'
 import './App.css'
 import * as routes from './constants/routes'
 import { firebase } from './firebase'
@@ -15,6 +16,11 @@ import SignInPage from './components/Signin'
 import Navigation from './components/./Navigation'
 import SplashPage from './components/./SplashPage'
 import DeleteUser from './components/./DeleteUser'
+import AccountProfile from './components/./AccountProfile'
+import SendRating from './components/./SendRating'
+import LovedUnlovedListSelf from './components/./LovedUnlovedListSelf'
+import LovedUnlovedListPartner from './components/./LovedUnlovedListPartner'
+import DeleteAccountButton from './components/./DeleteAccountButton'
 // import PasswordForgetPage from './components/PasswordForget'
 // import HomePage from './Home'
 // import AccountPage from './components/Account'
@@ -27,7 +33,7 @@ const muiTheme = getMuiTheme({
     primary1Color: '#941B0C',
     primary2Color: '#F6AA1C',
     primary3Color: grey400,
-    accent1Color: '#BC3908',
+    accent1Color: '#220901',
     accent2Color: grey100,
     accent3Color: grey500,
     textColor: '#220901',
@@ -40,6 +46,25 @@ const muiTheme = getMuiTheme({
     shadowColor: fullBlack,
   },
 })
+
+const loved = [
+  "Appreciation",
+  "Quality Time",
+  "Affection",
+  "Adoration",
+  "Sexual Intimacy",
+  "Recreation Together",
+  "Intimate Conversation"
+]
+const unloved = [
+  "Harsh Anger",
+  "Passive",
+  "Critical",
+  "No Voice",
+  "Unsolicited Advice",
+  "Stonewalling",
+  "Defensive"
+]
 
 class App extends Component {
 
@@ -65,7 +90,7 @@ class App extends Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <Router>
           <div>
-            <Navigation authUser={this.state.authUser} />
+            {/* <Navigation authUser={this.state.authUser} /> */}
 
             <hr/>
 
@@ -84,6 +109,36 @@ class App extends Component {
             <Route
               exact path={routes.DELETE_USER}
               component={() => <DeleteUser />}
+            />
+            <Route
+              exact path={routes.ACCOUNT_PROFILE}
+              component={() => <AccountProfile />}
+            />
+            <Route
+              exact path={routes.SEND_RATING}
+              component={() => <SendRating />}
+            />
+            {/* TODO add label items for loved/unloved...pull from db to populate and send to component as necessary */}
+
+            <Route
+              exact path={routes.LOVED_SELF}
+              component={() => <LovedUnlovedListSelf loved = {true} list = {loved}/>}
+            />
+            <Route
+              exact path={routes.LOVED_PARTNER}
+              component={() => <LovedUnlovedListPartner loved = {true} list = {loved} />}
+            />
+            <Route
+              exact path={routes.UNLOVED_SELF}
+              component={() => <LovedUnlovedListSelf loved = {false} list = {unloved}/>}
+            />
+            <Route
+              exact path={routes.UNLOVED_PARTNER}
+              component={() => <LovedUnlovedListPartner loved = {false} list = {unloved} />}
+            />
+            <Route
+              exact path={routes.DELETE_ACCOUNT_BUTTON}
+              component={() => <DeleteAccountButton />}
             />
             {/* <Route
               exact path={routes.PASSWORD_FORGET}
