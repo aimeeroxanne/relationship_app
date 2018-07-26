@@ -31,3 +31,5 @@ export {
   UNLOVED_PARTNER,
   DELETE_ACCOUNT_BUTTON,
 }
+
+//TODO remove partnership, but not account
